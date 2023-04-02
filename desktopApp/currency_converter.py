@@ -26,9 +26,10 @@ def show_currency():
     in_cur=in_combo.currentText()
     target_cur=target_combo.currentText()
     print(in_cur,target_cur)
-    rate=get_currency_rate() # calling a function that scrapes currant rate from x-rates web
+    rate=get_currency_rate(in_cur,target_cur) # calling a function that scrapes currant rate from x-rates web
     output=input_text*rate
-    output_label.setText(str(output)) # we display this value
+    message=f'{input_text} {in_cur} is {output} {target_cur}'
+    output_label.setText(str(message)) # we display the final rate plus msg!
 
 # Initial set up
 app=QApplication([])
