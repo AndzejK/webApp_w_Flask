@@ -27,29 +27,27 @@ window=QWidget() # all widget, button will be added in this "window"
 window.setWindowTitle('Word Definition')
 
 main_layout=QVBoxLayout()
-window.setLayout(main_layout)
-def_layout=QHBoxLayout()
+sec_layout=QHBoxLayout()
+main_layout.addLayout(sec_layout)
+
+# adding another label/widget/filed to display the outcome
+#result_as_def=QLabel('')
+#main_layout.addWidget(result_as_def)
+
 # Input/Enter a word
 word=QLineEdit()
-def_layout.addWidget(word)
+sec_layout.addWidget(word)
 
 # adding another widget for a button
 btn=QPushButton('Find')
-def_layout.addWidget(btn)
+sec_layout.addWidget(btn)
 # connecting a button to the txt field with a slot in it in its turn is a fn
 btn.clicked.connect(search_for_a_word)
 
-# adding another label/widget/filed to display the outcome
-main_layout.addLayout(def_layout)
-result_as_def=QLabel('')
-def_layout.addWidget(result_as_def)
-
-
 # adding widget/Label as msg to inform an user what's going on
-
 message=QLabel('')
-def_layout.addWidget(message)#alignment=Qt.AlignmentFlag.AlignCenter
+main_layout.addWidget(message)#alignment=Qt.AlignmentFlag.AlignCenter
 
-
+window.setLayout(main_layout)
 window.show()
 app.exec()
