@@ -30,22 +30,20 @@ main_layout=QVBoxLayout()
 sec_layout=QHBoxLayout()
 main_layout.addLayout(sec_layout)
 
-# adding another label/widget/filed to display the outcome
-#result_as_def=QLabel('')
-#main_layout.addWidget(result_as_def)
-
 # Input/Enter a word
 word=QLineEdit()
 sec_layout.addWidget(word)
 
 # adding another widget for a button
 btn=QPushButton('Find')
-sec_layout.addWidget(btn)
+sec_layout.addWidget(btn,alignment=Qt.AlignmentFlag.AlignBottom)
 # connecting a button to the txt field with a slot in it in its turn is a fn
 btn.clicked.connect(search_for_a_word)
 
 # adding widget/Label as msg to inform an user what's going on
 message=QLabel('')
+#Givig a fixed size for label when the outcome is displayed
+message.setFixedSize(800,100)
 main_layout.addWidget(message)#alignment=Qt.AlignmentFlag.AlignCenter
 
 window.setLayout(main_layout)
