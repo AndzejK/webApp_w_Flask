@@ -45,7 +45,35 @@ class Circle():
     
 
 my_circle=Circle(10)    
-print(my_circle.radius)
+# print(my_circle.radius)
 count_the_circle_area=my_circle.area()
-print(count_the_circle_area)
-print(my_circle.circumference())
+# print(count_the_circle_area)
+# print(my_circle.circumference())
+
+class Animal(): # called Base Class 
+    def __init__(self,fur):
+        self.fur=fur
+        # print('Animal created!')
+    def report(self):
+        print('Animal...')
+    def eat(self):
+        print('Eating!')
+
+# a=Animal()
+# a.eat()
+# a.report()
+
+# Reusing an existing class by inherinting it 
+class Bird(Animal): # called dDerived Class
+    def __init__(self,fur):
+        # reusing an existing class
+        Animal.__init__(self,fur)
+        print('Bird Created!')
+    # we can re-write the methods from the existing class while we inherited it
+    def report(self):
+        print('I am a bird, dog!')
+
+b=Bird('GgGgGg')
+b.eat()
+b.report()
+print(b.fur)
