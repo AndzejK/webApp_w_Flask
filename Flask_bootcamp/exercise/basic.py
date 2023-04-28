@@ -20,7 +20,7 @@ def report():
 
     report= lower_letter and upper_letter and num_end
 
-    return render_template('report.html',report=report,lower=lower_letter,upper=upper_letter,num_end=num_end)
+    return render_template('report.html',report=report,lower=lower_letter,upper=upper_letter,num_end=num_end,username=username)
 
 
 if __name__=='__main__':
