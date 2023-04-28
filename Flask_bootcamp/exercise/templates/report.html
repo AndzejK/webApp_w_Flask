@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{%block content%}
+<div class="mt-4 p-5 bg-primary text-white rounded">
+        <p>Welcome to Puppy User Name Check</p>
+        <p>Let's see if your User Name is secure!</p>
+        <p>You entered: {{username}} </p>
+        {%if report%}
+        <p>Your username: {{username}} passed all checks </p>
+        {%else%}
+        <ul>
+            {%if not lower %}
+                <li>You did not use a lowercase letter </li>
+            {%endif%}
+            {%if not upper %}
+            <li>You did not use a uppercase letter </li>
+            {%endif%}
+            {%if not num_end %}
+            <li>You did not end in a number</li>
+            {%endif%}
+        </ul>    
+        {%endif%}
+       
+   
+  </div>
+{%endblock%}
